@@ -23,7 +23,7 @@ class VEGA extends StatelessWidget {
         "FileViewer": (context) => FileViewer(),
         "Login": (context) => Login(),
         "Settings": (context) => Settings(),
-        "FilePicker": (context) => FilePicker(),
+        "FilePickerScreen": (context) => FilePickerScreen(),
       },
     );
   }

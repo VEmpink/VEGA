@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:file_picker/file_picker.dart";
 
 class Home extends StatelessWidget {
   @override
@@ -31,13 +32,22 @@ class Home extends StatelessWidget {
                       leading: Icon(Icons.image),
                       title: Text("Add Images/Videos"),
                       onTap: () {
-                        Navigator.pushNamed(context, "FilePicker");
+                        Navigator.pushNamed(context, "FilePickerScreen");
                       },
                     ),
                     ListTile(
                       leading: Icon(Icons.file_present),
                       title: Text("Add Another File"),
-                      onTap: () {},
+                      onTap: () async {
+                        FilePickerResult result = await FilePicker.platform
+                            .pickFiles(
+                                type: FileType.custom,
+                                allowedExtensions: ["swf", "flv"]);
+
+                        await FilePicker.platform.clearTemporaryFiles();
+
+                        print(result);
+                      },
                     ),
                     ListTile(
                       leading: Icon(Icons.photo_library),

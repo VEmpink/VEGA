@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 
-class FilePicker extends StatelessWidget {
+class FilePickerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
