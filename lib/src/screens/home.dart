@@ -13,8 +13,33 @@ class Home extends StatelessWidget {
             }),
         title: Text("Home"),
         actions: [
-          IconButton(icon: Icon(Icons.refresh), onPressed: () {}),
-          IconButton(icon: Icon(Icons.settings), onPressed: () {})
+          IconButton(
+              icon: Icon(Icons.refresh),
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return WillPopScope(
+                        onWillPop: () async => false,
+                        child: AlertDialog(
+                          content: Row(
+                            children: [
+                              CircularProgressIndicator(),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 32.0),
+                                child: Text("Refreshing..."),
+                              )
+                            ],
+                          ),
+                        ));
+                  },
+                );
+              }),
+          IconButton(
+              icon: Icon(Icons.settings),
+              onPressed: () {
+                Navigator.pushNamed(context, "Settings");
+              })
         ],
       ),
       body: Center(
