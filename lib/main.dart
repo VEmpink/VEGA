@@ -4,7 +4,7 @@ import "src/screens/album.dart";
 import "src/screens/file-viewer.dart";
 import "src/screens/login.dart";
 import "src/screens/settings.dart";
-import "src/screens/file-picker.dart";
+import 'src/screens/file-selector.dart';
 
 void main() {
   runApp(VEGA());
@@ -23,7 +23,7 @@ class VEGA extends StatelessWidget {
         "FileViewer": (context) => FileViewer(),
         "Login": (context) => Login(),
         "Settings": (context) => Settings(),
-        "FilePickerScreen": (context) => FilePickerScreen(),
+        "FileSelector": (context) => FileSelector(),
       },
     );
   }

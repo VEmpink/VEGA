@@ -57,7 +57,7 @@ class Home extends StatelessWidget {
                       leading: Icon(Icons.image),
                       title: Text("Add Images/Videos"),
                       onTap: () {
-                        Navigator.pushNamed(context, "FilePickerScreen");
+                        Navigator.pushNamed(context, "FileSelector");
                       },
                     ),
                     ListTile(

@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 
-class FilePickerScreen extends StatelessWidget {
+class FileSelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,10 +11,10 @@ class FilePickerScreen extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
-        title: Text("FilePicker"),
+        title: Text("FileSelector"),
       ),
       body: Center(
-        child: Text("FilePicker"),
+        child: Text("FileSelector"),
       ),
     );
   }
