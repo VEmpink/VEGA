@@ -1,5 +1,10 @@
-import 'package:flutter/material.dart';
-import 'src/screens/home.dart';
+import "package:flutter/material.dart";
+import "src/screens/home.dart";
+import "src/screens/album.dart";
+import "src/screens/file-viewer.dart";
+import "src/screens/login.dart";
+import "src/screens/settings.dart";
+import "src/screens/file-picker.dart";
 
 void main() {
   runApp(VEGA());
@@ -11,8 +16,15 @@ class VEGA extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Home',
-      home: Home(),
+      initialRoute: "Home",
+      routes: {
+        "Home": (context) => Home(),
+        "Album": (context) => Album(),
+        "FileViewer": (context) => FileViewer(),
+        "Login": (context) => Login(),
+        "Settings": (context) => Settings(),
+        "FilePicker": (context) => FilePicker(),
+      },
     );
   }
 }
