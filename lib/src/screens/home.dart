@@ -21,7 +21,33 @@ class Home extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(
+              context: context,
+              builder: (context) {
+                return Wrap(
+                  children: [
+                    ListTile(
+                      leading: Icon(Icons.image),
+                      title: Text("Add Images/Videos"),
+                      onTap: () {
+                        Navigator.pushNamed(context, "FilePicker");
+                      },
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.file_present),
+                      title: Text("Add Another File"),
+                      onTap: () {},
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.photo_library),
+                      title: Text("Create Private Album"),
+                      onTap: () {},
+                    ),
+                  ],
+                );
+              });
+        },
       ),
     );
   }
