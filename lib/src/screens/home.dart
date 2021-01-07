@@ -42,7 +42,25 @@ class Home extends StatelessWidget {
                     ListTile(
                       leading: Icon(Icons.photo_library),
                       title: Text("Create Private Album"),
-                      onTap: () {},
+                      onTap: () {
+                        showDialog(
+                            context: context,
+                            builder: (context) {
+                              return AlertDialog(
+                                title: Text("Create Private Album"),
+                                content: Wrap(children: [
+                                  Text("Please enter the Album name"),
+                                  TextField()
+                                ]),
+                                actions: [
+                                  FlatButton(
+                                    child: Text("CREATE"),
+                                    onPressed: () {},
+                                  )
+                                ],
+                              );
+                            });
+                      },
                     ),
                   ],
                 );
