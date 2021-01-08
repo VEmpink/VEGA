@@ -1,10 +1,10 @@
 import "package:flutter/material.dart";
 import "src/screens/home.dart";
 import "src/screens/album.dart";
-import "src/screens/file-viewer.dart";
+import 'src/screens/file_viewer.dart';
 import "src/screens/login.dart";
 import "src/screens/settings.dart";
-import 'src/screens/file-selector.dart';
+import 'src/screens/file_selector.dart';
 
 void main() {
   runApp(VEGA());
