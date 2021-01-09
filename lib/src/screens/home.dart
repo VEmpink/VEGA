@@ -1,4 +1,6 @@
 import "package:flutter/material.dart";
+import 'package:photo_manager/photo_manager.dart';
+import 'package:vega/src/components/home/album_showcase.dart';
 import "../components/home/home_fab.dart";
 
 class Home extends StatefulWidget {
@@ -7,8 +9,24 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  List<AssetPathEntity> assetPathList = [];
+
   void initState() {
     super.initState();
+
+    _fetchCameraRoll();
+  }
+
+  Future<void> _fetchCameraRoll() async {
+    final bool hasPermission = await PhotoManager.requestPermission();
+
+    if (hasPermission) {
+      final cameraRoll = await PhotoManager.getAssetPathList(hasAll: false);
+
+      setState(() {
+        assetPathList = cameraRoll;
+      });
+    }
   }
 
   @override
@@ -51,8 +69,8 @@ class _HomeState extends State<Home> {
               })
         ],
       ),
-      body: Center(
-        child: Text("Hello World!"),
+      body: AlbumShowcase(
+        data: assetPathList,
       ),
       floatingActionButton: HomeFab(),
     );
