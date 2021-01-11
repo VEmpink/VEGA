@@ -9,6 +9,7 @@ class AlbumCard extends StatefulWidget {
   final int totalFiles;
   final File thumbnail;
 
+  @override
   _AlbumCardState createState() => _AlbumCardState();
 }
 
